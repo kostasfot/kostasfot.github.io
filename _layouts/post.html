@@ -1,0 +1,85 @@
+---
+layout: default
+---
+{% assign word_count = content | number_of_words %}
+{% assign reading_minutes = word_count | divided_by: 200 %}
+{% if reading_minutes < 1 %}{% assign reading_minutes = 1 %}{% endif %}
+
+<main id="main-content" class="post-shell max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 pb-24">
+    <article>
+        <a href="{{ '/blog/' | relative_url }}" class="post-back-link">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Back to Blog
+        </a>
+
+        <header class="post-header glass-card rounded-2xl p-6 sm:p-10">
+            <div class="flex flex-wrap items-center gap-3 mb-5 font-mono text-xs">
+                <span class="post-type">{{ page.type | default: 'article' | capitalize }}</span>
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+                <span aria-hidden="true">•</span>
+                <span>{{ reading_minutes }} min read</span>
+            </div>
+
+            <h1>{{ page.title }}</h1>
+            {% if page.excerpt %}
+            <p class="post-deck">{{ page.excerpt | strip_html }}</p>
+            {% endif %}
+
+            {% if page.tags and page.tags != empty %}
+            <ul class="tag-list" aria-label="Post tags">
+                {% for tag in page.tags %}
+                <li>{{ tag }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </header>
+
+        {% if page.cover_image %}
+        <figure class="post-cover">
+            <img src="{{ page.cover_image | relative_url }}" alt="{{ page.cover_image_alt | default: page.title }}" width="1200" height="630">
+        </figure>
+        {% endif %}
+
+        <div class="post-content glass-card rounded-2xl p-6 sm:p-10">
+            {{ content }}
+        </div>
+
+        <footer class="post-footer">
+            <div class="post-actions">
+                {% if page.repository_url %}
+                <a href="{{ page.repository_url }}" target="_blank" rel="noopener noreferrer" class="post-action">
+                    <i data-lucide="code-2" class="w-4 h-4"></i>
+                    View repository
+                </a>
+                {% endif %}
+                {% if page.demo_url %}
+                <a href="{{ page.demo_url }}" target="_blank" rel="noopener noreferrer" class="post-action">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                    View demo
+                </a>
+                {% endif %}
+                <button type="button" id="copy-page-link" class="post-action" data-copy-label="Copy link">
+                    <i data-lucide="link" class="w-4 h-4"></i>
+                    <span>Copy link</span>
+                </button>
+            </div>
+
+            {% if page.previous or page.next %}
+            <nav class="post-pagination" aria-label="Post navigation">
+                {% if page.previous %}
+                <a href="{{ page.previous.url | relative_url }}" class="post-pagination-link post-pagination-link--previous">
+                    <span>Previous</span>
+                    <strong>{{ page.previous.title }}</strong>
+                </a>
+                {% endif %}
+                {% if page.next %}
+                <a href="{{ page.next.url | relative_url }}" class="post-pagination-link post-pagination-link--next">
+                    <span>Next</span>
+                    <strong>{{ page.next.title }}</strong>
+                </a>
+                {% endif %}
+            </nav>
+            {% endif %}
+        </footer>
+    </article>
+</main>
