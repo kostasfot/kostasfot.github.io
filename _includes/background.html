@@ -1,0 +1,7 @@
+<div id="tech-background" class="tech-background{% unless page.animated_background %} tech-background--static{% endunless %}" aria-hidden="true">
+    {% if page.animated_background %}
+    <canvas id="tech-canvas" class="tech-background__canvas"></canvas>
+    {% endif %}
+    <div class="tech-background__atmosphere"></div>
+    <div class="tech-background__veil"></div>
+</div>

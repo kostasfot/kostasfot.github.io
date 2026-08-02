@@ -1,0 +1,38 @@
+title: Konstantinos Fotoglou
+description: Data science projects, machine-learning experiments, AI notes, tutorials, and professional experience from Konstantinos Fotoglou.
+url: https://kostasfot.github.io
+baseurl: ""
+lang: en
+timezone: Europe/Athens
+permalink: /blog/:title/
+future: false
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: <!--more-->
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      page_type: post
+      animated_background: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
