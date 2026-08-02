@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">KF monogram</title>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0B0F17" stroke="#164E63" stroke-width="2"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5">
+    <path d="M18.5 17v30M18.5 32 33 17M18.5 32 33 47" stroke="#22D3EE"/>
+    <path d="M40 47V17h15M40 31h12" stroke="#2DD4BF"/>
+  </g>
+</svg>
