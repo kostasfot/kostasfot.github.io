@@ -1,0 +1,351 @@
+.obs-shell {
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 1.5rem 6rem;
+  position: relative;
+  z-index: 1;
+}
+.obs-hero {
+  padding: 2rem 0 2.6rem;
+  max-width: 920px;
+}
+.obs-eyebrow {
+  font:
+    500 0.73rem/1.7 "Fira Code",
+    monospace;
+  letter-spacing: 0.13em;
+  color: #22d3ee;
+  margin: 0 0 0.8rem;
+}
+.obs-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.05em;
+  color: #f1f5f9;
+  margin: 0 0 1.4rem;
+}
+.obs-hero h1 span {
+  color: #2dd4bf;
+}
+.obs-deck {
+  max-width: 720px;
+  font-size: 1.13rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+.obs-meta,
+.obs-note {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin: 1rem 0;
+}
+.obs-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1.5rem 0;
+}
+.obs-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid #0891b2;
+  background: #083344;
+  color: #cffafe !important;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+.obs-button:hover {
+  background: #164e63;
+}
+.obs-button.secondary {
+  background: transparent;
+  border-color: #475569;
+  color: #cbd5e1 !important;
+}
+.obs-nav {
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  border-top: 1px solid #334155;
+  border-bottom: 1px solid #334155;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+}
+.obs-nav a:hover,
+.obs-section a,
+.obs-notice a {
+  color: #67e8f9;
+}
+.obs-notice {
+  border-left: 3px solid #14b8a6;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  background: #0f172a;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+.obs-controls {
+  display: flex;
+  gap: 1.2rem;
+  align-items: end;
+  flex-wrap: wrap;
+  padding: 1.2rem;
+  background: #0f172a;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+.obs-controls label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: grid;
+  gap: 0.5rem;
+}
+.obs-controls select {
+  background: #0b0f17;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  padding: 0.65rem;
+  min-width: 145px;
+  max-width: 100%;
+  font: inherit;
+}
+.obs-controls p {
+  flex: 1 1 250px;
+  font-size: 0.77rem !important;
+  color: #94a3b8;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+.obs-section {
+  padding: 3rem 0;
+  border-bottom: 1px solid #1e293b;
+  scroll-margin-top: 90px;
+}
+.obs-section h2 {
+  color: #f1f5f9;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0 0 1rem;
+}
+.obs-section h3 {
+  font-size: 1.15rem;
+  color: #f1f5f9;
+  margin: 1.7rem 0 0.6rem;
+}
+.obs-section p {
+  line-height: 1.85;
+  max-width: 900px;
+  margin-bottom: 1.2rem;
+}
+.obs-section ul {
+  list-style: disc;
+  padding-left: 1.3rem;
+  line-height: 1.9;
+}
+.obs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.obs-plot {
+  min-width: 0;
+  background: #0f172a;
+  border-radius: 9px;
+  overflow: hidden;
+  margin: 1rem 0;
+  min-height: 350px;
+}
+.obs-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.obs-kpi {
+  padding: 1.3rem;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: linear-gradient(140deg, #0f172a, #0b0f17);
+}
+.obs-kpi .label {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+.obs-kpi strong {
+  display: block;
+  color: #f1f5f9;
+  font:
+    600 clamp(1.5rem, 3vw, 2rem) / 1.5 "Fira Code",
+    monospace;
+}
+.obs-kpi small {
+  display: block;
+  color: #94a3b8;
+  line-height: 1.6;
+  font-size: 0.73rem;
+}
+.obs-detail {
+  margin: 1rem 0;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.obs-detail summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+.obs-table-scroll {
+  overflow: auto;
+  max-height: 430px;
+  margin: 1rem 0;
+}
+.obs-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+.obs-table th,
+.obs-table td {
+  padding: 0.65rem 0.8rem;
+  border-bottom: 1px solid #334155;
+  text-align: left;
+  white-space: nowrap;
+}
+.obs-table th {
+  background: #172033;
+  color: #e2e8f0;
+  position: sticky;
+  top: 0;
+}
+.obs-table td {
+  font-family: "Fira Code", monospace;
+}
+.obs-download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.6rem;
+}
+.obs-download-grid a {
+  padding: 1rem;
+  border: 1px solid #334155;
+  border-radius: 7px;
+  text-decoration: none;
+}
+.obs-source {
+  padding: 1rem 0;
+  border-bottom: 1px solid #334155;
+  font-size: 0.85rem;
+}
+.obs-source p {
+  margin-bottom: 0.5rem;
+}
+.obs-shell :focus-visible,
+.obs-detail :focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 4px;
+}
+.obs-blog-chart {
+  margin: 1.5rem 0;
+}
+.obs-blog-chart .obs-plot {
+  min-height: 390px;
+}
+.obs-blog-chart .obs-note {
+  font-size: 0.8rem;
+}
+.obs-blog-chart .obs-table th,
+.obs-blog-chart .obs-table td {
+  padding: 0.65rem;
+}
+.obs-blog-chart a {
+  font-size: 0.85rem;
+}
+.obs-blog-chart .obs-button {
+  margin-top: 0.5rem;
+}
+#obs-status {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+.obs-error {
+  color: #fda4af !important;
+  padding: 1rem;
+  border: 1px solid #9f1239;
+}
+.obs-blog-chart .obs-table-scroll {
+  max-height: 360px;
+}
+@media (max-width: 800px) {
+  .obs-grid {
+    grid-template-columns: 1fr;
+  }
+  .obs-shell {
+    padding: 1.5rem 0.85rem 4rem;
+  }
+  .obs-section {
+    padding: 2rem 0;
+  }
+  .obs-controls {
+    padding: 1rem;
+  }
+  .obs-nav {
+    gap: 0.8rem;
+    font-size: 0.8rem;
+  }
+  .obs-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .obs-kpi {
+    padding: 0.8rem;
+  }
+  .obs-kpi strong {
+    font-size: 1.4rem;
+  }
+  .obs-plot {
+    border-radius: 6px;
+  }
+  .obs-hero {
+    padding-top: 1rem;
+  }
+  .obs-blog-chart .obs-plot {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .obs-kpis {
+    grid-template-columns: 1fr;
+  }
+  .obs-controls label {
+    width: 100%;
+  }
+}
+@media print {
+  .obs-nav,
+  .obs-controls,
+  .obs-button,
+  .modebar {
+    display: none !important;
+  }
+  .obs-section {
+    break-inside: avoid;
+  }
+  .obs-shell {
+    max-width: none;
+  }
+  .obs-hero h1 {
+    font-size: 2.5rem;
+  }
+}

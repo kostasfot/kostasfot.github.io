@@ -41,6 +41,11 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% if page.observatory %}
+    <link rel="stylesheet" href="{{ '/assets/css/observatory.css' | relative_url }}">
+    <script defer src="{{ '/assets/js/plotly-4.0.0.min.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/observatory.mjs' | relative_url }}"></script>
+    {% endif %}
 
     {% if page.page_type == 'post' %}
     <script>

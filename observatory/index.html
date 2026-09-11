@@ -1,0 +1,224 @@
+---
+layout: default
+title: Greek Tourism Observatory
+description: Explore official accommodation statistics for Central Macedonia and Greece, with source notes and downloadable data.
+permalink: /observatory/
+page_type: observatory
+observatory: true
+animated_background: false
+---
+
+<main
+  id="main-content"
+  class="obs-shell"
+  data-observatory
+  data-snapshot="/assets/data/observatory/2026-09-11-v1/snapshot.json"
+>
+  <header class="obs-hero">
+    <p class="obs-eyebrow">GREEK TOURISM OBSERVATORY / PUBLIC EDITION</p>
+    <h1>A clearer view of<br /><span>northern Greece.</span></h1>
+    <p class="obs-deck">
+      Explore the season behind the headline. Accommodation demand, source
+      markets and capacity—with the definitions and data to check the story
+      yourself.
+    </p>
+    <div class="obs-actions">
+      <a class="obs-button" href="/blog/greek-tourism-observatory/"
+        >Read the analysis ↗</a
+      ><a class="obs-button secondary" href="#downloads">Download the data ↓</a>
+    </div>
+    <p class="obs-meta">
+      Reviewed snapshot · 11 September 2026 · Shared period 2019–2024 · 2025
+      capacity shown separately
+    </p>
+  </header>
+  <nav class="obs-nav" aria-label="Observatory sections">
+    <a href="#overview">Overview</a><a href="#demand">Demand</a
+    ><a href="#destinations">Destinations</a
+    ><a href="#seasonality">Seasonality</a><a href="#capacity">Capacity</a
+    ><a href="#markets">Markets</a><a href="#methodology">Methodology</a
+    ><a href="#downloads">Downloads</a>
+  </nav>
+  <div class="obs-notice">
+    This public edition contains cleared ELSTAT and Eurostat accommodation data.
+    Travel-value, airport and boundary-map outputs are not redistributed here.
+    <a href="#methodology">See scope and official sources →</a>
+  </div>
+  <p id="obs-status" role="status">Loading the reviewed snapshot…</p>
+  <noscript
+    ><p>
+      Interactive charts require JavaScript.
+      <a href="/assets/data/observatory/2026-09-11-v1/data.zip"
+        >Download the complete public ZIP</a
+      >
+      or
+      <a href="/blog/greek-tourism-observatory/"
+        >read the article and its static tables</a
+      >.
+    </p></noscript
+  >
+  <div class="obs-controls" aria-label="Accommodation filters">
+    <label
+      >Destination
+      <select id="obs-geography" aria-describedby="obs-filter-note"></select
+    ></label>
+    <label
+      >Shared year
+      <select id="obs-year" aria-describedby="obs-filter-note"></select
+    ></label>
+    <p id="obs-filter-note">
+      Applies to overview and annual comparisons. History charts retain all
+      years. Seasonality is always Central Macedonia; source-market controls are
+      separate.
+    </p>
+  </div>
+  <section id="overview" class="obs-section">
+    <p class="obs-eyebrow">01 / THE BIG PICTURE</p>
+    <h2>Accommodation at a glance</h2>
+    <p id="obs-population"></p>
+    <div id="obs-kpis" class="obs-kpis"></div>
+    <div id="obs-benchmark"></div>
+  </section>
+  <section id="demand" class="obs-section">
+    <p class="obs-eyebrow">02 / DEMAND</p>
+    <h2>Check-ins and nights tell different stories</h2>
+    <p>
+      Annual history for the selected destination. Hatched bars mark the latest
+      shared year. Central Macedonia's 2021 expansion to short-stay
+      establishments prevents a like-for-like recovery comparison with 2019.
+    </p>
+    <div class="obs-grid">
+      <div id="obs-arrivals" class="obs-plot"></div>
+      <div id="obs-nights" class="obs-plot"></div>
+    </div>
+    <div id="obs-demand-table"></div>
+  </section>
+  <section id="destinations" class="obs-section">
+    <p class="obs-eyebrow">03 / PLACE</p>
+    <h2>One region, different destination profiles</h2>
+    <p>
+      Thessaloniki, Chalkidiki and Pieria use annual hotel-only data. Compare
+      those units with one another, not directly with Central Macedonia's
+      broader accommodation total.
+    </p>
+    <div class="obs-grid">
+      <div id="obs-ranking-arrivals" class="obs-plot"></div>
+      <div id="obs-ranking-nights" class="obs-plot"></div>
+    </div>
+    <div id="obs-region-ranking" class="obs-plot"></div>
+    <div id="obs-regions-table"></div>
+    <p class="obs-note">
+      Regional ranking replaces the boundary map while geometry reuse is under
+      review.
+    </p>
+  </section>
+  <section id="seasonality" class="obs-section">
+    <p class="obs-eyebrow">04 / THE SHAPE OF THE YEAR</p>
+    <h2>How much depends on summer?</h2>
+    <p>
+      Central Macedonia only. Monthly nights cover the published accommodation
+      population; official bed occupancy is hotel-only. Occupancy is not
+      recalculated using all nights divided by registered beds.
+    </p>
+    <div id="obs-season-kpis" class="obs-kpis"></div>
+    <div class="obs-grid">
+      <div id="obs-monthly" class="obs-plot"></div>
+      <div id="obs-occupancy" class="obs-plot"></div>
+    </div>
+    <div id="obs-monthly-table"></div>
+  </section>
+  <section id="capacity" class="obs-section">
+    <p class="obs-eyebrow">05 / SUPPLY</p>
+    <h2>The size of the accommodation base</h2>
+    <p>
+      Hotel capacity for the selected destination, through the latest available
+      capacity year. Registered bed places are not the same as beds open every
+      night. ELSTAT is primary; its differences from Eurostat capacity have not
+      been resolved.
+    </p>
+    <div class="obs-grid">
+      <div id="obs-beds" class="obs-plot"></div>
+      <div id="obs-hotels" class="obs-plot"></div>
+    </div>
+    <div id="obs-capacity-table"></div>
+  </section>
+  <section id="markets" class="obs-section">
+    <p class="obs-eyebrow">06 / SOURCE MARKETS</p>
+    <h2>Who accounts for non-resident demand?</h2>
+    <div class="obs-controls">
+      <label
+        >Market geography
+        <select id="obs-market-geography">
+          <option value="EL52">Central Macedonia</option>
+          <option value="GR">Greece</option>
+        </select></label
+      ><label
+        >Measure
+        <select id="obs-market-metric">
+          <option value="nights">Nights</option>
+          <option value="arrivals">Arrivals</option>
+        </select></label
+      >
+      <p>
+        Uses the shared-year selector above. No country detail is invented for
+        the three subregional units.
+      </p>
+    </div>
+    <div id="obs-market-kpis" class="obs-kpis"></div>
+    <div id="obs-market-chart" class="obs-plot"></div>
+    <p>
+      Top-five share includes named countries only. HHI uses published country
+      and residual buckets: a large “other” category limits what it says about
+      true country-level diversification.
+    </p>
+    <div id="obs-market-table"></div>
+  </section>
+  <section id="methodology" class="obs-section">
+    <p class="obs-eyebrow">07 / TRUST & LIMITS</p>
+    <h2>What this edition can—and cannot—tell you</h2>
+    <ul id="obs-notes"></ul>
+    <h3>Travel value and airport accessibility</h3>
+    <p>
+      Receipts, expenditure per trip/visit, length of stay and airport passenger
+      charts remain in the local research product, but are withheld from this
+      public edition pending publication clearance. This is not evidence that
+      those measures are unimportant or unavailable at source.
+    </p>
+    <p>
+      Inbound travellers, regional visits, accommodation check-ins and airport
+      passengers count different events. Never add them together. Receipts are
+      nominal spending, not GDP, profit or measured causal impact.
+    </p>
+    <div id="obs-sources"></div>
+  </section>
+  <section id="downloads" class="obs-section">
+    <p class="obs-eyebrow">08 / TAKE THE EVIDENCE WITH YOU</p>
+    <h2>Open the data, not just the chart</h2>
+    <p>
+      Download the reviewed public extracts used here—not a copy of the full
+      private database. CSVs retain unrounded numeric values, units, populations
+      and status columns. Missing cells are not zero.
+    </p>
+    <div class="obs-actions">
+      <a
+        class="obs-button"
+        href="/assets/data/observatory/2026-09-11-v1/data.zip"
+        download
+        >All public data · ZIP ↓</a
+      ><a
+        class="obs-button secondary"
+        href="/assets/data/observatory/2026-09-11-v1/manifest.json"
+        >Release manifest & checksums</a
+      ><a
+        class="obs-button secondary"
+        href="/assets/data/observatory/2026-09-11-v1/README.md"
+        >Data dictionary</a
+      >
+    </div>
+    <div id="obs-downloads" class="obs-download-grid"></div>
+    <p class="obs-note">
+      Online interactive snapshot, not an automatically updating database
+      connection. Release <code>2026-09-11-v1</code>.
+    </p>
+  </section>
+</main>

@@ -1,0 +1,57 @@
+year,metric,value,unit,population,source_status,analytical_status,yoy_change_percent,yoy_status,recovery_2019_index,recovery_2019_status,geography_code,geography_name,geography_nuts_level
+2019,hotel_bed_places,93036.0,bed-places,hotels and similar establishments,observed,observed,,no_prior_period,100.0,observed,EL52,Central Macedonia,2
+2019,hotel_establishments,1175.0,establishments,hotels and similar establishments,observed,observed,,no_prior_period,100.0,observed,EL52,Central Macedonia,2
+2020,hotel_bed_places,93840.0,bed-places,hotels and similar establishments,observed,observed,0.8641816071198294,observed,100.86418160711983,observed,EL52,Central Macedonia,2
+2020,hotel_establishments,1175.0,establishments,hotels and similar establishments,observed,observed,0.0,observed,100.0,observed,EL52,Central Macedonia,2
+2021,hotel_bed_places,94659.0,bed-places,hotels and similar establishments,observed,observed,0.8727621483376025,observed,101.74448600541726,observed,EL52,Central Macedonia,2
+2021,hotel_establishments,1171.0,establishments,hotels and similar establishments,observed,observed,-0.34042553191488967,observed,99.65957446808511,observed,EL52,Central Macedonia,2
+2022,hotel_bed_places,94557.0,bed-places,hotels and similar establishments,observed,observed,-0.10775520552720463,observed,101.63485102540952,observed,EL52,Central Macedonia,2
+2022,hotel_establishments,1148.0,establishments,hotels and similar establishments,observed,observed,-1.964133219470543,observed,97.70212765957447,observed,EL52,Central Macedonia,2
+2023,hotel_bed_places,92723.0,bed-places,hotels and similar establishments,observed,observed,-1.9395708408684764,observed,99.66357109076056,observed,EL52,Central Macedonia,2
+2023,hotel_establishments,1136.0,establishments,hotels and similar establishments,observed,observed,-1.0452961672473893,observed,96.68085106382979,observed,EL52,Central Macedonia,2
+2024,hotel_bed_places,92057.0,bed-places,hotels and similar establishments,observed,observed,-0.7182683907984044,observed,98.94771916247474,observed,EL52,Central Macedonia,2
+2024,hotel_establishments,1127.0,establishments,hotels and similar establishments,observed,observed,-0.7922535211267623,observed,95.91489361702128,observed,EL52,Central Macedonia,2
+2025,hotel_bed_places,92198.0,bed-places,hotels and similar establishments,observed,observed,0.1531659732556978,observed,99.09927339954426,observed,EL52,Central Macedonia,2
+2025,hotel_establishments,1115.0,establishments,hotels and similar establishments,observed,observed,-1.0647737355811926,observed,94.8936170212766,observed,EL52,Central Macedonia,2
+2019,hotel_bed_places,15339.0,bed-places,hotels and similar establishments,observed,observed,,no_prior_period,100.0,observed,EL522,Thessaloniki,3
+2019,hotel_establishments,145.0,establishments,hotels and similar establishments,observed,observed,,no_prior_period,100.0,observed,EL522,Thessaloniki,3
+2020,hotel_bed_places,15440.0,bed-places,hotels and similar establishments,observed,observed,0.6584523111024199,observed,100.65845231110242,observed,EL522,Thessaloniki,3
+2020,hotel_establishments,143.0,establishments,hotels and similar establishments,observed,observed,-1.379310344827589,observed,98.62068965517241,observed,EL522,Thessaloniki,3
+2021,hotel_bed_places,15735.0,bed-places,hotels and similar establishments,observed,observed,1.9106217616580379,observed,102.58165460590651,observed,EL522,Thessaloniki,3
+2021,hotel_establishments,145.0,establishments,hotels and similar establishments,observed,observed,1.3986013986013957,observed,100.0,observed,EL522,Thessaloniki,3
+2022,hotel_bed_places,16294.0,bed-places,hotels and similar establishments,observed,observed,3.5525897680330543,observed,106.22595997131495,observed,EL522,Thessaloniki,3
+2022,hotel_establishments,149.0,establishments,hotels and similar establishments,observed,observed,2.758620689655178,observed,102.75862068965517,observed,EL522,Thessaloniki,3
+2023,hotel_bed_places,16049.0,bed-places,hotels and similar establishments,observed,observed,-1.503620964772312,observed,104.62872416715561,observed,EL522,Thessaloniki,3
+2023,hotel_establishments,147.0,establishments,hotels and similar establishments,observed,observed,-1.342281879194629,observed,101.37931034482759,observed,EL522,Thessaloniki,3
+2024,hotel_bed_places,16325.0,bed-places,hotels and similar establishments,observed,observed,1.7197333167175533,observed,106.4280591955147,observed,EL522,Thessaloniki,3
+2024,hotel_establishments,151.0,establishments,hotels and similar establishments,observed,observed,2.7210884353741527,observed,104.13793103448276,observed,EL522,Thessaloniki,3
+2025,hotel_bed_places,16421.0,bed-places,hotels and similar establishments,observed,observed,0.5880551301684633,observed,107.05391485755264,observed,EL522,Thessaloniki,3
+2025,hotel_establishments,150.0,establishments,hotels and similar establishments,observed,observed,-0.6622516556291425,observed,103.44827586206897,observed,EL522,Thessaloniki,3
+2019,hotel_bed_places,20616.0,bed-places,hotels and similar establishments,observed,observed,,no_prior_period,100.0,observed,EL525,Pieria,3
+2019,hotel_establishments,375.0,establishments,hotels and similar establishments,observed,observed,,no_prior_period,100.0,observed,EL525,Pieria,3
+2020,hotel_bed_places,20636.0,bed-places,hotels and similar establishments,observed,observed,0.09701202949166099,observed,100.09701202949167,observed,EL525,Pieria,3
+2020,hotel_establishments,375.0,establishments,hotels and similar establishments,observed,observed,0.0,observed,100.0,observed,EL525,Pieria,3
+2021,hotel_bed_places,20772.0,bed-places,hotels and similar establishments,observed,observed,0.6590424500872327,observed,100.75669383003492,observed,EL525,Pieria,3
+2021,hotel_establishments,370.0,establishments,hotels and similar establishments,observed,observed,-1.3333333333333308,observed,98.66666666666667,observed,EL525,Pieria,3
+2022,hotel_bed_places,20129.0,bed-places,hotels and similar establishments,observed,observed,-3.0955131908338096,observed,97.63775708187815,observed,EL525,Pieria,3
+2022,hotel_establishments,355.0,establishments,hotels and similar establishments,observed,observed,-4.054054054054057,observed,94.66666666666667,observed,EL525,Pieria,3
+2023,hotel_bed_places,20105.0,bed-places,hotels and similar establishments,observed,observed,-0.11923096030602709,observed,97.52134264648816,observed,EL525,Pieria,3
+2023,hotel_establishments,352.0,establishments,hotels and similar establishments,observed,observed,-0.8450704225352101,observed,93.86666666666666,observed,EL525,Pieria,3
+2024,hotel_bed_places,19612.0,bed-places,hotels and similar establishments,observed,observed,-2.452126336732152,observed,95.12999611951882,observed,EL525,Pieria,3
+2024,hotel_establishments,344.0,establishments,hotels and similar establishments,observed,observed,-2.2727272727272707,observed,91.73333333333333,observed,EL525,Pieria,3
+2025,hotel_bed_places,19308.0,bed-places,hotels and similar establishments,observed,observed,-1.5500713848664138,observed,93.65541327124564,observed,EL525,Pieria,3
+2025,hotel_establishments,335.0,establishments,hotels and similar establishments,observed,observed,-2.6162790697674465,observed,89.33333333333333,observed,EL525,Pieria,3
+2019,hotel_bed_places,49691.0,bed-places,hotels and similar establishments,observed,observed,,no_prior_period,100.0,observed,EL527,Chalkidiki,3
+2019,hotel_establishments,510.0,establishments,hotels and similar establishments,observed,observed,,no_prior_period,100.0,observed,EL527,Chalkidiki,3
+2020,hotel_bed_places,50188.0,bed-places,hotels and similar establishments,observed,observed,1.0001811193173893,observed,101.00018111931739,observed,EL527,Chalkidiki,3
+2020,hotel_establishments,513.0,establishments,hotels and similar establishments,observed,observed,0.588235294117645,observed,100.58823529411765,observed,EL527,Chalkidiki,3
+2021,hotel_bed_places,50609.0,bed-places,hotels and similar establishments,observed,observed,0.8388459392683512,observed,101.84741703729046,observed,EL527,Chalkidiki,3
+2021,hotel_establishments,512.0,establishments,hotels and similar establishments,observed,observed,-0.19493177387914784,observed,100.3921568627451,observed,EL527,Chalkidiki,3
+2022,hotel_bed_places,50685.0,bed-places,hotels and similar establishments,observed,observed,0.15017091821611928,observed,102.00036223863475,observed,EL527,Chalkidiki,3
+2022,hotel_establishments,503.0,establishments,hotels and similar establishments,observed,observed,-1.7578125,observed,98.62745098039215,observed,EL527,Chalkidiki,3
+2023,hotel_bed_places,49414.0,bed-places,hotels and similar establishments,observed,observed,-2.50764525993884,observed,99.44255498983719,observed,EL527,Chalkidiki,3
+2023,hotel_establishments,501.0,establishments,hotels and similar establishments,observed,observed,-0.3976143141153132,observed,98.23529411764706,observed,EL527,Chalkidiki,3
+2024,hotel_bed_places,49069.0,bed-places,hotels and similar establishments,observed,observed,-0.6981827012587538,observed,98.74826427320843,observed,EL527,Chalkidiki,3
+2024,hotel_establishments,496.0,establishments,hotels and similar establishments,observed,observed,-0.9980039920159722,observed,97.25490196078431,observed,EL527,Chalkidiki,3
+2025,hotel_bed_places,49343.0,bed-places,hotels and similar establishments,observed,observed,0.558397358821261,observed,99.29967197279186,observed,EL527,Chalkidiki,3
+2025,hotel_establishments,494.0,establishments,hotels and similar establishments,observed,observed,-0.40322580645161255,observed,96.86274509803921,observed,EL527,Chalkidiki,3
