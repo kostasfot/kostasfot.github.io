@@ -84,3 +84,19 @@ GitHub Pages builds from the `main` branch repository root. Merging a valid post
 - `/sitemap.xml`
 
 No backend, database, or separate hosting service is required.
+
+## Greek Tourism Observatory
+
+The public dashboard is at `/observatory/`; its companion article remains at
+`/blog/greek-tourism-observatory/`. Both use one reviewed, versioned data snapshot.
+“Live” means publicly accessible and interactive, not automatically refreshed.
+
+The initial public release contains cleared ELSTAT/Eurostat accommodation
+extracts. Bank of Greece-derived outputs, Fraport traffic and GISCO geometry
+are withheld pending publication clearance. Source terms and omissions are
+visible in the dashboard and downloadable release manifest.
+
+Run `node --test tests/observatory.test.mjs` before the Jekyll build. No npm
+installation is required to run the site or these tests. Plotly.js is pinned
+and vendored with its license. See `DESIGN.md` and the analytics repository's
+`docs/data/public-observatory-publication.md` for the refresh/review process.

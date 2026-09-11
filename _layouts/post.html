@@ -21,6 +21,7 @@ layout: default
             </div>
 
             <h1>{{ page.title }}</h1>
+            {% if page.last_modified_at %}<p class="obs-meta">Updated {{ page.last_modified_at | date: "%B %-d, %Y" }} · Published snapshot {{ page.release_id }}</p>{% endif %}
             {% if page.excerpt %}
             <p class="post-deck">{{ page.excerpt | strip_html }}</p>
             {% endif %}

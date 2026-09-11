@@ -1,0 +1,49 @@
+year,geography_code,metric,population,destination_value,national_value,share_percent,status,unit,dataset_code
+2019,EL52,total_arrivals,hotels and similar establishments excluding tourist campsites,3092167.0,27063766.0,11.42548675598215,Comparable,arrivals,tour_occ_arm
+2019,EL52,total_nights,hotels and similar establishments excluding tourist campsites,10809343.0,109206980.0,9.898033074442678,Comparable,nights,tour_occ_nim
+2020,EL52,total_arrivals,hotels and similar establishments excluding tourist campsites,964095.0,8209962.0,11.74298979702951,Comparable,arrivals,tour_occ_arm
+2020,EL52,total_nights,hotels and similar establishments excluding tourist campsites,2773076.0,30376164.0,9.12911847592079,Comparable,nights,tour_occ_nim
+2021,EL52,total_arrivals,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,2068334.0,17729238.0,11.66623179180064,Comparable,arrivals,tour_occ_arm
+2021,EL52,total_nights,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,8065946.0,72608930.0,11.108752050195479,Comparable,nights,tour_occ_nim
+2022,EL52,total_arrivals,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,3779335.0,30998150.0,12.192130820710268,Comparable,arrivals,tour_occ_arm
+2022,EL52,total_nights,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,15117068.0,130906100.0,11.54802411805103,Comparable,nights,tour_occ_nim
+2023,EL52,total_arrivals,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,4185855.0,35310933.0,11.854274708629193,Comparable,arrivals,tour_occ_arm
+2023,EL52,total_nights,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,16223226.0,145068720.0,11.183131690966874,Comparable,nights,tour_occ_nim
+2024,EL52,total_arrivals,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,4428987.0,36666543.0,12.079096194042618,Comparable,arrivals,tour_occ_arm
+2024,EL52,total_nights,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,17184700.0,150753298.0,11.399219936136985,Comparable,nights,tour_occ_nim
+2019,EL522,total_arrivals,hotels and similar establishments excluding tourist campsites,1398043.0,27063766.0,5.165737096603628,Comparable,arrivals,tour_occ_arm
+2019,EL522,total_nights,hotels and similar establishments excluding tourist campsites,2864654.0,109206980.0,2.623141854119581,Comparable,nights,tour_occ_nim
+2020,EL522,total_arrivals,hotels and similar establishments excluding tourist campsites,450141.0,8209962.0,5.482863379879225,Comparable,arrivals,tour_occ_arm
+2020,EL522,total_nights,hotels and similar establishments excluding tourist campsites,912914.0,30376164.0,3.0053630208211937,Comparable,nights,tour_occ_nim
+2021,EL522,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,626033.0,14595911.0,4.289098501628299,Comparable,arrivals,tour_occ_arm
+2021,EL522,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1266367.0,58344644.0,2.170494004556785,Comparable,nights,tour_occ_nim
+2022,EL522,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1165606.0,24893083.0,4.68244933743241,Comparable,arrivals,tour_occ_arm
+2022,EL522,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,2385531.0,101901023.0,2.3410275282516055,Comparable,nights,tour_occ_nim
+2023,EL522,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1408989.0,28490209.0,4.94552005567948,Comparable,arrivals,tour_occ_arm
+2023,EL522,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,2853469.0,112497629.0,2.53647034641059,Comparable,nights,tour_occ_nim
+2024,EL522,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1487414.0,29494104.0,5.0430892899814825,Comparable,arrivals,tour_occ_arm
+2024,EL522,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,3006254.0,116878400.0,2.572121110487481,Comparable,nights,tour_occ_nim
+2019,EL525,total_arrivals,hotels and similar establishments excluding tourist campsites,381366.0,27063766.0,1.4091386985831904,Comparable,arrivals,tour_occ_arm
+2019,EL525,total_nights,hotels and similar establishments excluding tourist campsites,1702416.0,109206980.0,1.5588893676942628,Comparable,nights,tour_occ_nim
+2020,EL525,total_arrivals,hotels and similar establishments excluding tourist campsites,156391.0,8209962.0,1.9048931042555375,Comparable,arrivals,tour_occ_arm
+2020,EL525,total_nights,hotels and similar establishments excluding tourist campsites,496466.0,30376164.0,1.634393335511357,Comparable,nights,tour_occ_nim
+2021,EL525,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,230786.0,14595911.0,1.5811688629781315,Comparable,arrivals,tour_occ_arm
+2021,EL525,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,972701.0,58344644.0,1.6671641702021525,Comparable,nights,tour_occ_nim
+2022,EL525,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,342602.0,24893083.0,1.3762939688908762,Comparable,arrivals,tour_occ_arm
+2022,EL525,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1577135.0,101901023.0,1.5477126269870716,Comparable,nights,tour_occ_nim
+2023,EL525,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,442000.0,28490209.0,1.5514101704203012,Comparable,arrivals,tour_occ_arm
+2023,EL525,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1770657.0,112497629.0,1.5739505052146476,Comparable,nights,tour_occ_nim
+2024,EL525,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,446976.0,29494104.0,1.5154757710218965,Comparable,arrivals,tour_occ_arm
+2024,EL525,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1797892.0,116878400.0,1.5382585661679147,Comparable,nights,tour_occ_nim
+2019,EL527,total_arrivals,hotels and similar establishments excluding tourist campsites,1077714.0,27063766.0,3.9821287251744635,Comparable,arrivals,tour_occ_arm
+2019,EL527,total_nights,hotels and similar establishments excluding tourist campsites,5647006.0,109206980.0,5.170920393549936,Comparable,nights,tour_occ_nim
+2020,EL527,total_arrivals,hotels and similar establishments excluding tourist campsites,266296.0,8209962.0,3.2435716511233545,Comparable,arrivals,tour_occ_arm
+2020,EL527,total_nights,hotels and similar establishments excluding tourist campsites,1178262.0,30376164.0,3.8789032084498887,Comparable,nights,tour_occ_nim
+2021,EL527,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,683120.0,14595911.0,4.680214890320995,Comparable,arrivals,tour_occ_arm
+2021,EL527,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,3336393.0,58344644.0,5.7184220714415535,Comparable,nights,tour_occ_nim
+2022,EL527,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1066387.0,24893083.0,4.283868735744785,Comparable,arrivals,tour_occ_arm
+2022,EL527,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,5347641.0,101901023.0,5.247877639069433,Comparable,nights,tour_occ_nim
+2023,EL527,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1140580.0,28490209.0,4.003410434791826,Comparable,arrivals,tour_occ_arm
+2023,EL527,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,5733663.0,112497629.0,5.096696749048818,Comparable,nights,tour_occ_nim
+2024,EL527,total_arrivals,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,1183143.0,29494104.0,4.011455984558812,Comparable,arrivals,tour_occ_arm
+2024,EL527,total_nights,hotels and similar establishments excluding tourist campsites and short-stay accommodation establishments,6081443.0,116878400.0,5.203222323371983,Comparable,nights,tour_occ_nim

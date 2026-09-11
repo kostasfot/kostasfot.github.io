@@ -1,0 +1,4 @@
+# Publication checksums describe exact bytes on Windows and GitHub Pages.
+assets/data/observatory/** -text -whitespace
+# Preserve the upstream licensed runtime unchanged, including its whitespace.
+assets/js/plotly-4.0.0.min.js -text -whitespace

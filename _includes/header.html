@@ -13,6 +13,7 @@
                 <a href="{{ '/#experience' | relative_url }}" class="hover:text-cyan-400 transition-colors flex items-center gap-1"><span class="text-cyan-500">03.</span> Experience</a>
                 <a href="{{ '/#education' | relative_url }}" class="hover:text-cyan-400 transition-colors flex items-center gap-1"><span class="text-cyan-500">04.</span> Education</a>
                 <a href="{{ '/blog/' | relative_url }}" class="hover:text-cyan-400 transition-colors flex items-center gap-1{% if page.page_type == 'blog' or page.page_type == 'post' %} text-cyan-400{% endif %}"{% if page.page_type == 'blog' or page.page_type == 'post' %} aria-current="page"{% endif %}><span class="text-cyan-500">05.</span> Blog</a>
+                <a href="{{ '/observatory/' | relative_url }}" class="hover:text-cyan-400 transition-colors"{% if page.page_type == 'observatory' %} aria-current="page"{% endif %}>Observatory</a>
                 <a href="{{ '/#contact' | relative_url }}" class="px-4 py-2 rounded-md bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-200">Contact</a>
             </nav>
 
@@ -28,6 +29,7 @@
         <a href="{{ '/#experience' | relative_url }}" class="mobile-link block text-slate-300 hover:text-cyan-400">03. Experience</a>
         <a href="{{ '/#education' | relative_url }}" class="mobile-link block text-slate-300 hover:text-cyan-400">04. Education</a>
         <a href="{{ '/blog/' | relative_url }}" class="mobile-link block{% if page.page_type == 'blog' or page.page_type == 'post' %} text-cyan-400{% else %} text-slate-300 hover:text-cyan-400{% endif %}"{% if page.page_type == 'blog' or page.page_type == 'post' %} aria-current="page"{% endif %}>05. Blog</a>
-        <a href="{{ '/#contact' | relative_url }}" class="mobile-link block text-cyan-400 font-semibold">06. Contact</a>
+        <a href="{{ '/observatory/' | relative_url }}" class="mobile-link block text-cyan-400"{% if page.page_type == 'observatory' %} aria-current="page"{% endif %}>06. Observatory</a>
+        <a href="{{ '/#contact' | relative_url }}" class="mobile-link block text-cyan-400 font-semibold">07. Contact</a>
     </div>
 </header>
