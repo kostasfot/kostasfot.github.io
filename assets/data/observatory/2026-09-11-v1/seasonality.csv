@@ -1,7 +1,0 @@
-year,population,month_count,observed_month_count,annual_nights,peak_three_month_nights,peak_three_month_share_percent,monthly_coefficient_of_variation,calculation_status
-2019,hotels and similar establishments excluding tourist campsites,12,12,10809343.0,5583145.0,51.65110404952456,0.7300383204035503,observed
-2020,hotels and similar establishments excluding tourist campsites,12,12,2773076.0,1643741.0,59.27500724826871,0.9306173281658078,observed
-2021,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,12,12,8065946.0,5672433.0,70.3257001720567,1.1407638750711377,observed
-2022,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,12,12,15117068.0,9728485.0,64.35431129898998,1.0321954450188142,observed
-2023,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,12,12,16223226.0,9907497.0,61.0698328433568,0.9622905690869633,observed
-2024,hotels and similar establishments and short-stay accommodation establishments excluding tourist campsites,12,12,17184700.0,10480579.0,60.987849656962304,0.9584276465170107,observed

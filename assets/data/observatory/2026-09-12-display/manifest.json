@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "release": "2026-09-12-display",
+  "source_commit": "bd529c752de77c1c8c6d51271a51fcea6e88fa84",
+  "snapshot_date": "2026-09-11",
+  "source_vintages": {
+    "ELSTAT": "2026-09-11",
+    "Eurostat": "2026-09-11",
+    "Bank of Greece": "2026-09-11"
+  },
+  "shared_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "omissions": [
+    {
+      "provider": "Fraport Greece",
+      "items": "Airport total, domestic/international, mix, recovery and associated tables/downloads",
+      "reason": "Written website reuse permission not held."
+    },
+    {
+      "provider": "GISCO",
+      "items": "NUTS choropleth and boundary downloads",
+      "reason": "Geometry redistribution review unresolved; rankings retained without boundaries."
+    }
+  ],
+  "files": {
+    "snapshot.json": "364fda1b7f89d6b61c93aa7774ac3db4fd8f38923ad33c95edb964661f73461d"
+  }
+}

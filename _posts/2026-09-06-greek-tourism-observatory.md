@@ -1,14 +1,14 @@
 ---
 title: "How to Measure the Performance of a Greek Tourism Destination"
-excerpt: "Beyond the busy summer: explore Central Macedonia's tourism demand, seasonality, hotel capacity and source markets, with an interactive Observatory and downloadable official data."
+excerpt: "Beyond the busy summer: explore Central Macedonia's tourism demand, seasonality and visitor spending, with matching charts, a live Observatory and links to the official sources."
 type: project
 tags: [tourism-analytics, python, duckdb, data-visualization, greece]
 cover_image: /assets/images/posts/greek-tourism-observatory/cover.webp
 cover_image_alt: "Beyond the arrival count: measuring a Greek tourism destination with the Greek Tourism Observatory"
 repository_url: https://github.com/kostasfot/tourism-analytics-learning-lab
 demo_url: https://kostasfot.github.io/observatory/
-last_modified_at: 2026-09-11
-release_id: 2026-09-11-v1
+last_modified_at: 2026-09-12
+release_id: 2026-09-12-display
 observatory: true
 published: true
 ---
@@ -19,18 +19,20 @@ published: true
 
 That is why I built the Greek Tourism Observatory: to move from “it felt busy” to questions we can actually check. How much demand reached the destination? How concentrated was the season? Which markets mattered? And are we comparing like with like?
 
+The Bank of Greece adds another layer: **Central Macedonia's travel receipts rose to about €1.62 billion in 2025, but nights per regional visit fell to 3.95.** More activity, more spending and longer stays do not necessarily move together. The new travel-value section below explores that distinction.
+
 You can now explore the evidence yourself. The dashboard runs here on this website, without an account or a separate app to install.
 
-<div class="obs-actions"><a class="obs-button" href="/observatory/">Explore the live Observatory ↗</a><a class="obs-button secondary" href="/observatory/#downloads">Download the public data ↓</a></div>
+<div class="obs-actions"><a class="obs-button" href="/observatory/">Explore the live Observatory ↗</a><a class="obs-button secondary" href="/observatory/#sources">Find the official sources ↗</a></div>
 
 <!--more-->
 
-<div data-blog-observatory data-snapshot="/assets/data/observatory/2026-09-11-v1/snapshot.json"></div>
+<div data-blog-observatory data-snapshot="/assets/data/observatory/2026-09-12-display/snapshot.json"></div>
 <p id="obs-status" role="status"></p>
 
-> **A note on “live”:** the dashboard is online and interactive, but its data are a reviewed published snapshot—not a live database connection. This edition uses source files freshly retrieved on **11 September 2026**, release **2026-09-11-v1**. Accommodation comparisons share **2019–2024**; **2025 hotel capacity** appears separately. The required 2025 monthly, source-market and subregional accommodation tables were still unavailable in the inspected ELSTAT publication pack.
+> **A note on “live”:** the dashboard is online and interactive, but its data are a reviewed published snapshot—not a live database connection. This edition uses source files retrieved on **11 September 2026**, release **2026-09-12-display**. Accommodation comparisons share **2019–2024**; **2025 hotel capacity and Bank of Greece travel statistics** appear separately. The required 2025 monthly, source-market and subregional accommodation tables were still unavailable in the inspected ELSTAT publication pack.
 
-The public edition contains the accommodation material cleared for reuse from **ELSTAT and Eurostat**. Travel-value and airport outputs, and the boundary map, are withheld pending publication clearance. I explain those gaps below and link to the official sources. This edition replaces the earlier article's affected graphics and chart-data download; the original local research product remains separate.
+The public edition combines **ELSTAT and Eurostat accommodation statistics** with selected **Bank of Greece travel statistics** and clearly labelled calculations. Airport outputs and the boundary map remain outside this edition. Original datasets should be obtained from the official providers; this website no longer offers data downloads.
 
 ## First, what does “a visitor” actually mean?
 
@@ -69,7 +71,7 @@ There is a historical trap here. **From 2021, Central Macedonia's regional serie
 | Accommodation check-ins | 4,428,987 | 36,666,543 | 12.08% |
 | Accommodation nights | 17,184,700 | 150,753,298 | 11.40% |
 
-The national denominator uses Eurostat monthly resident-plus-non-resident totals, matching the establishment categories. Hotels are **NACE I551**; short-stay accommodation is **I552**. I do not substitute an aggregate that also includes campsites. A valid annual comparison requires twelve observed, unflagged months per required component. The export retains those cells so you can check the denominator. Sources: [Eurostat tourism data](https://ec.europa.eu/eurostat/web/tourism/information-data), `tour_occ_arm` and `tour_occ_nim`; regional numerator from ELSTAT.
+The national denominator uses Eurostat monthly resident-plus-non-resident totals, matching the establishment categories. Hotels are **NACE I551**; short-stay accommodation is **I552**. I do not substitute an aggregate that also includes campsites. A valid annual comparison requires twelve observed, unflagged months per required component. The on-page benchmark table reports the matched totals and population. Sources: [Eurostat tourism data](https://ec.europa.eu/eurostat/web/tourism/information-data), `tour_occ_arm` and `tour_occ_nim`; regional numerator from ELSTAT.
 
 <div class="obs-blog-chart" data-chart="regions-total_nights-2024" data-table="regions" data-filters='{"year":2024,"metric":"total_nights"}' data-caption="Greek regions: annual accommodation nights"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?year=2024#destinations">Compare the regional ranking →</a></div>
 
@@ -81,7 +83,7 @@ The ranking places Central Macedonia in a national context without confusing lan
 
 <div class="obs-blog-chart" data-chart="ranking-total_arrivals-2024" data-table="demand" data-filters='{"year":2024,"metric":"total_arrivals"}' data-caption="2024 check-ins and population labels"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?year=2024#destinations">Explore subregional comparisons →</a></div>
 
-This is a comparison of **annual hotel-only** observations for the three Regional Units. It is not a monthly picture and does not include the full regional short-stay population. The supporting download also includes the separately labelled Central Macedonia total; do not add it to its constituent areas.
+This is a comparison of **annual hotel-only** observations for the three Regional Units. It is not a monthly picture and does not include the full regional short-stay population. The supporting table also includes the separately labelled Central Macedonia total; do not add it to its constituent areas.
 
 <div class="obs-blog-chart" data-chart="ranking-total_nights-2024" data-table="demand" data-filters='{"year":2024,"metric":"total_nights"}' data-caption="2024 nights and population labels"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?geo=EL527&amp;year=2024#destinations">Explore Chalkidiki and its neighbours →</a></div>
 
@@ -136,7 +138,7 @@ Source: [ELSTAT capacity, Table 01—www.statistics.gr](https://www.statistics.g
 
 <div class="obs-blog-chart" data-chart="markets-EL52-2024-nights" data-table="markets" data-filters='{"geography_id":"EL52","year":2024,"metric":"nights"}' data-caption="Central Macedonia source markets: non-resident nights"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?market=EL52&amp;measure=nights&amp;year=2024#markets">Explore nights by source market →</a></div>
 
-The chart highlights named countries while the download retains the broader published detail. The regional non-resident-night denominator is **14,184,425**, rather than the 17.18 million nights including residents used earlier. A top-five chart is a starting point for monitoring, not a reason to ignore smaller markets or domestic demand.
+The chart highlights named countries while the on-page table retains the broader published detail. The regional non-resident-night denominator is **14,184,425**, rather than the 17.18 million nights including residents used earlier. A top-five chart is a starting point for monitoring, not a reason to ignore smaller markets or domestic demand.
 
 <div class="obs-blog-chart" data-chart="markets-EL52-2024-arrivals" data-table="markets" data-filters='{"geography_id":"EL52","year":2024,"metric":"arrivals"}' data-caption="Central Macedonia source markets: non-resident check-ins"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?market=EL52&amp;measure=arrivals&amp;year=2024#markets">Switch to check-ins by source market →</a></div>
 
@@ -151,18 +153,63 @@ Switching to non-resident check-ins changes the regional top-five share to **46.
 
 There is a catch in the HHI row. HHI adds squared shares to describe concentration, but here it uses **published country and residual buckets**. The region's large residual category is not one country. It would be misleading to interpret the HHI difference as a clean country-level diversification ranking. Greece's denominator is also unavailable in some earlier retained market workbooks; the corresponding chart is withheld rather than inventing a total. Source: [ELSTAT country-of-residence results, Table 14—www.statistics.gr](https://www.statistics.gr/en/statistics/-/publication/STO12/2024).
 
-## What about spending, length of stay and the airport?
+## Now follow the spending—not just the check-ins
 
-**Accommodation is only one part of performance.** The broader local Observatory examines travel receipts, spending per trip or regional visit, nights per traveller or visit, and Thessaloniki Airport traffic. Those concepts remain important, although their derived charts and downloadable values are not included in this public release.
+**Central Macedonia's 2025 travel receipts improved, but the recovery story is mixed.** The Bank of Greece series records about **€1,624.1 million**, up **9.3%** from 2024. That is encouraging after the prior year's decline. It is also only **72.2% of the 2019 nominal receipts level** in this source vintage. A stronger latest year and an incomplete longer-term recovery can both be true.
 
-| Question | Appropriate source and measure | Interpretation guardrail |
-| --- | --- | --- |
-| How much did inbound travel generate? | [Bank of Greece Travel Services](https://www.bankofgreece.gr/en/statistics/external-sector/balance-of-payments/travel-services), nominal receipts | Not GDP, profit or inflation-adjusted welfare |
-| How much per trip or regional visit? | Matching receipts divided by national travellers **or** regional visits | Never mix national and regional denominators |
-| How long did visitors stay? | Matching nights divided by travellers or visits | Different population from accommodation check-ins |
-| How connected is the airport? | [Fraport Greece reports](https://www.fraport-greece.com/en/our-expertise/aviation/traffic-figures.html), passenger movements | Includes residents, departures and non-tourism travel |
+<div class="obs-blog-chart" data-chart="travel-receipts-EL52_REGIONAL" data-table="travel" data-filters='{"scope_id":"EL52_REGIONAL"}' data-caption="Central Macedonia: regional travel receipts and matching inputs"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?travel=EL52_REGIONAL&amp;travelYear=2025#travel">Explore regional travel value →</a></div>
 
-The Bank of Greece's [terms](https://www.bankofgreece.gr/en/useful-links/terms-of-use) distinguish accurate reproduction from modification; permission for these transformed public outputs has not been established. Fraport's [terms](https://www.fraport-greece.com/en/site-services/legal-information.html) require written consent for use on other websites. This is a conservative publication decision, not a claim that the statistics cannot be consulted. The map is likewise withheld until the relevant [GISCO reuse conditions](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics) are resolved for this release.
+This is a different lens from ELSTAT accommodation. It concerns expenditure associated with **non-resident regional visits**, not hotel revenue alone and not domestic tourism spending. It cannot tell us a hotel's profit margin or tourism's contribution to GDP. The receipts are **nominal euros**: comparing them with 2019 does not adjust for changing prices. Sources: [Bank of Greece Travel Services, annual regional receipts, visits and overnight-stay workbooks](https://www.bankofgreece.gr/en/statistics/external-sector/balance-of-payments/travel-services); calculations from the retained September 11 source vintage.
+
+### More per visit, less time in the region
+
+Here is the useful tension. Regional visits increased from about **7.03 million to 7.19 million** between 2024 and 2025. Receipts grew faster, so our calculated expenditure per regional visit rose from **€211.41 to €226.01**, about **6.9%**. But the matching overnight-stay total fell from **31.03 million to 28.35 million**.
+
+<div class="obs-blog-chart" data-chart="travel-expenditure-EL52_REGIONAL" data-table="travel" data-filters='{"scope_id":"EL52_REGIONAL"}' data-caption="Central Macedonia: expenditure per regional visit"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?travel=EL52_REGIONAL&amp;travelYear=2025#travel">Inspect expenditure and its denominator →</a></div>
+
+Divide those nights by the regional visits and average stay falls from **4.41 to 3.95 nights**, a **10.6% decrease**. For a destination conversation, that is more informative than calling the year simply “better” or “worse”. It suggests looking at the combination of spending and duration—not celebrating volume in isolation.
+
+<div class="obs-blog-chart" data-chart="travel-average_stay_nights-EL52_REGIONAL" data-table="travel" data-filters='{"scope_id":"EL52_REGIONAL"}' data-caption="Central Macedonia: nights per regional visit"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?travel=EL52_REGIONAL&amp;travelYear=2025#travel">Explore stay duration →</a></div>
+
+| Central Macedonia, regional visits | 2019 | 2024 | 2025 |
+| --- | ---: | ---: | ---: |
+| Travel receipts, EUR millions | 2,249.8 | 1,486.0 | 1,624.1 |
+| Regional visits, millions | 6.76 | 7.03 | 7.19 |
+| Overnight stays, millions | 40.81 | 31.03 | 28.35 |
+| Calculated expenditure per visit, EUR | 332.77 | 211.41 | 226.01 |
+| Calculated nights per visit | 6.04 | 4.41 | 3.95 |
+
+Source: [Bank of Greece regional travel statistics](https://www.bankofgreece.gr/en/statistics/external-sector/balance-of-payments/travel-services). Ratios, percentage changes and rounding are my calculations from matching annual inputs. The charts use their own labelled scales; compare the numbers, not bar heights across different charts.
+
+These averages do **not** establish why stays shortened. A change in source markets, trip purposes or the mix of short and long visits could affect them; these aggregate totals cannot separate those explanations. Nor can the regional result be assigned to Thessaloniki, Chalkidiki or Pieria. The sensible next question is which visitor segments account for the change, using evidence at the right level.
+
+### Greece's national story is not the region's story
+
+At national level, 2025 receipts reached **€23,626.8 million**, with **43.31 million inbound travellers** and **244.67 million overnight stays**. Our matching ratios are **€545.50 per inbound traveller** and **5.65 nights per traveller**. The final [Bank of Greece 2025 release, published 7 May 2026](https://www.bankofgreece.gr/en/news-and-media/press-office/news-list/news?announcement=27a32287-1c58-44e7-b900-2c92c53ffe9c) corroborates these totals and the direction of change.
+
+<div class="obs-blog-chart" data-chart="travel-receipts-GR_NATIONAL" data-table="travel" data-filters='{"scope_id":"GR_NATIONAL"}' data-caption="Greece: national travel receipts"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?travel=GR_NATIONAL&amp;travelYear=2025#travel">Switch to national travel statistics →</a></div>
+
+National receipts were about **30.0% above 2019 in nominal terms**, whereas expenditure per inbound traveller was only **2.0% above 2019**. The larger total therefore does not mean a similarly large rise in spending per traveller. Again, neither comparison is inflation-adjusted.
+
+<div class="obs-blog-chart" data-chart="travel-expenditure-GR_NATIONAL" data-table="travel" data-filters='{"scope_id":"GR_NATIONAL"}' data-caption="Greece: expenditure per inbound traveller"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?travel=GR_NATIONAL&amp;travelYear=2025#travel">Compare national expenditure history →</a></div>
+
+The duration measure also shortened: from **6.96 nights in 2019**, to **5.92 in 2024**, to **5.65 in 2025**. These are nights per inbound traveller, not nights per accommodation check-in. That difference is exactly why I keep the two dashboard sections separate.
+
+<div class="obs-blog-chart" data-chart="travel-average_stay_nights-GR_NATIONAL" data-table="travel" data-filters='{"scope_id":"GR_NATIONAL"}' data-caption="Greece: nights per inbound traveller"><div class="obs-plot"></div><div class="obs-chart-table"></div><a href="/observatory/?travel=GR_NATIONAL&amp;travelYear=2025#travel">Inspect national duration and source inputs →</a></div>
+
+| Greece, national inbound travellers | 2019 | 2024 | 2025 |
+| --- | ---: | ---: | ---: |
+| Travel receipts, EUR millions | 18,178.8 | 21,592.3 | 23,626.8 |
+| Inbound travellers, millions | 34.00 | 40.69 | 43.31 |
+| Overnight stays, millions | 236.55 | 240.82 | 244.67 |
+| Calculated expenditure per traveller, EUR | 534.60 | 530.60 | 545.50 |
+| Calculated nights per traveller | 6.96 | 5.92 | 5.65 |
+
+Source: [Bank of Greece national travel statistics](https://www.bankofgreece.gr/en/statistics/external-sector/balance-of-payments/travel-services), with my matching-input calculations. **Do not turn the regional and national averages into a destination league table:** one denominator counts regional visits, the other inbound travellers. The national total includes supplementary cruise data that are excluded from the regional Border Survey results. A traveller can visit several regions in a single trip. The [final release's methodology notes](https://www.bankofgreece.gr/en/news-and-media/press-office/news-list/news?announcement=27a32287-1c58-44e7-b900-2c92c53ffe9c) explain these coverage differences.
+
+## And the airport and map?
+
+Airport accessibility still matters, but passenger movements are not tourist arrivals: they include residents, departures and non-tourism travel. Consult the [official Fraport Greece traffic reports](https://www.fraport-greece.com/en/our-expertise/aviation/traffic-figures.html). Their charts remain outside this public edition under the current [website reuse review](https://www.fraport-greece.com/en/site-services/legal-information.html). The boundary map likewise remains outside the edition pending review of the relevant [GISCO conditions](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics). Neither gap prevents readers from consulting the official sources.
 
 ## How I would use this in a destination meeting
 
@@ -173,17 +220,20 @@ The Bank of Greece's [terms](https://www.bankofgreece.gr/en/useful-links/terms-o
 3. **Look beyond the annual total.** Review the monthly regional profile before calling a season balanced or resilient.
 4. **Compare the right places.** Use hotel-only subregional comparisons, and a matched national denominator for regional shares.
 5. **Treat concentration as a prompt for investigation.** Monitor leading markets and residual coverage, rather than turning an incomplete HHI into a definitive risk score.
+6. **Put value and duration beside volume.** Use Bank of Greece receipts and matching traveller/visit ratios without confusing them with accommodation statistics.
 
-The next questions are not answered by these charts alone: How do accommodation patterns connect with visitor spending? Which experiences could attract viable shoulder-season demand? How do residents experience tourism pressure? What explains the remaining source differences? Those require additional evidence, not stronger wording around the same statistics.
+The next questions are not answered by these charts alone: Which visitor segments explain shorter stays? How do accommodation patterns connect with spending at local businesses? Which experiences could attract viable shoulder-season demand? How do residents experience tourism pressure? Those require additional evidence, not stronger wording around the same statistics.
 
-## Download, inspect and reuse the evidence
+## Follow the evidence to its source
 
-Every interactive figure above draws from the **same versioned snapshot** as the dashboard. Open its exact-data panel to inspect rows or download a filtered CSV. The full cleared extract includes nine CSV tables, the chart snapshot, source provenance, reuse notes and a compact data dictionary. A separate manifest records file checksums.
+Every interactive figure above uses the **same reviewed snapshot** as the dashboard. Open its on-page table to inspect the displayed observations. If you want to download data, please go directly to [ELSTAT](https://www.statistics.gr/en/statistics/-/publication/STO12/2025), [Eurostat](https://ec.europa.eu/eurostat/web/tourism/information-data) or [Bank of Greece Travel Services](https://www.bankofgreece.gr/en/statistics/external-sector/balance-of-payments/travel-services). Those providers maintain the original files, revisions and reuse conditions. This website does not offer dataset downloads or a database copy.
 
-<div class="obs-actions"><a class="obs-button" href="/assets/data/observatory/2026-09-11-v1/data.zip" download>Download the public data ZIP ↓</a><a class="obs-button secondary" href="/observatory/#downloads">Browse individual CSV files</a><a class="obs-button secondary" href="/assets/data/observatory/2026-09-11-v1/manifest.json">View release manifest</a></div>
+<div class="obs-actions"><a class="obs-button" href="/observatory/#travel">Explore travel value in the Observatory ↗</a><a class="obs-button secondary" href="/observatory/#sources">Browse official source links ↗</a></div>
 
-These are **public aggregate extracts**, not the full DuckDB database or original institutional files. Nulls remain missing rather than zero; status columns explain unavailable values and comparisons. CSV numbers retain calculation precision, while the article rounds for readability. The pipeline and quality-check code is in the [Tourism Analytics Learning Lab](https://github.com/kostasfot/tourism-analytics-learning-lab).
+Missing values remain missing rather than becoming zero; status fields explain unavailable comparisons. The article rounds for readability. The pipeline and quality-check code is in the [Tourism Analytics Learning Lab](https://github.com/kostasfot/tourism-analytics-learning-lab).
 
 **Attribution and modifications:** source data are from the Hellenic Statistical Authority (ELSTAT), [www.statistics.gr](https://www.statistics.gr), and [Eurostat](https://ec.europa.eu/eurostat/web/tourism/information-data). I selected, translated and normalized observations and calculated the indicators. ELSTAT, Eurostat and the European Union bear no responsibility for these modifications. Reuse follows the [ELSTAT policy](https://www.statistics.gr/documents/20181/1412250/Copyright_Reuse_Policy_EN.pdf/dfacb7d1-3d9b-471f-851a-8b8b09994a74?t=1464603016196) and [Eurostat copyright notice](https://ec.europa.eu/eurostat/help/copyright-notice), with third-party materials and logos excluded.
+
+**Bank of Greece attribution:** source: [Bank of Greece, Travel Services](https://www.bankofgreece.gr/en/statistics/external-sector/balance-of-payments/travel-services), retrieved 11 September 2026. The calculations, charts and commentary are my own; this is not a Bank of Greece publication or endorsement. Consult its [terms of use](https://www.bankofgreece.gr/en/useful-links/terms-of-use) before reusing source material. Source documents, official illustrations and logos are not reproduced here, and attribution is not a blanket permission for further reuse.
 
 The goal is not a dashboard that makes every number look certain. It is a useful starting point for a better conversation about tourism—one where you can see the definition, follow the source, and check the data yourself.

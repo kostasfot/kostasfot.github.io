@@ -4,24 +4,6 @@ export function selectRows(rows, filters) {
     Object.entries(filters).every(([key, value]) => row[key] === value),
   );
 }
-export function csvText(rows) {
-  if (!rows.length) return "";
-  const keys = Object.keys(rows[0]);
-  const cell = (value) => {
-    let text = value == null ? "" : String(value);
-    if (typeof value === "string" && /^[\s]*[=+@-]/.test(text))
-      text = "'" + text;
-    return /[",\n\r]/.test(text)
-      ? '"' + text.replaceAll('"', '""') + '"'
-      : text;
-  };
-  return (
-    [
-      keys.map(cell).join(","),
-      ...rows.map((row) => keys.map((key) => cell(row[key])).join(",")),
-    ].join("\n") + "\n"
-  );
-}
 export function resolveFilters(snapshot, search) {
   const params = new URLSearchParams(search);
   const geo = snapshot.geographies.some((g) => g.code === params.get("geo"))
@@ -36,13 +18,37 @@ export function resolveFilters(snapshot, search) {
   const metric = ["arrivals", "nights"].includes(params.get("measure"))
     ? params.get("measure")
     : "nights";
-  return { geo, year, marketGeo, metric };
-}
-export function csvDownloadUrl(rows) {
-  return "data:text/csv;charset=utf-8," + encodeURIComponent(csvText(rows));
+  const travelScope = Object.hasOwn(
+    snapshot.travel_scopes,
+    params.get("travel"),
+  )
+    ? params.get("travel")
+    : "EL52_REGIONAL";
+  const years = snapshot.travel_years[travelScope];
+  const travelYear = years.includes(Number(params.get("travelYear")))
+    ? Number(params.get("travelYear"))
+    : years.at(-1);
+  return { geo, year, marketGeo, metric, travelScope, travelYear };
 }
 const label = (value) =>
   value.replaceAll("_", " ").replace(/^./, (c) => c.toUpperCase());
+
+export function chartData(spec, compact) {
+  const data = structuredClone(spec.data);
+  if (compact && spec.layout.title?.text.includes("Bank of Greece")) {
+    for (const trace of data) {
+      if (trace.type !== "bar" || !trace.text) continue;
+      // Keep full hover text; label endpoints without shrinking phone text.
+      trace.texttemplate = trace.text.map((_, index) =>
+        index === 0 || index === trace.text.length - 1 ? "%{text}" : "",
+      );
+      trace.textfont = { ...trace.textfont, size: 12 };
+      trace.textangle = 0;
+      trace.constraintext = "none";
+    }
+  }
+  return data;
+}
 const number = (value, decimals = 0) =>
   value == null
     ? "Not available"
@@ -73,13 +79,6 @@ function table(target, rows, title, columns = null) {
   }
   const details = element("details", null, "obs-detail");
   details.append(element("summary", `${title} · ${rows.length} rows`));
-  const button = link(
-    "Download these rows · CSV ↓",
-    csvDownloadUrl(rows),
-    "obs-button secondary",
-  );
-  button.download = title.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-") + ".csv";
-  details.append(button);
   const scroll = element("div", null, "obs-table-scroll");
   scroll.tabIndex = 0;
   scroll.setAttribute("aria-label", title + " scrollable table");
@@ -137,7 +136,7 @@ async function plot(target, spec) {
     target.append(
       element(
         "p",
-        "Chart library unavailable. The exact table and CSV remain available.",
+        "Chart library unavailable. The exact table remains available. For source datasets, follow the official-source links.",
         "obs-note",
       ),
     );
@@ -154,11 +153,16 @@ async function plot(target, spec) {
     layout.font = { ...layout.font, size: 11 };
     layout.margin.r = 18;
   }
-  await window.Plotly.newPlot(canvas, spec.data, layout, {
-    responsive: true,
-    displaylogo: false,
-    displayModeBar: false,
-  });
+  await window.Plotly.newPlot(
+    canvas,
+    chartData(spec, window.innerWidth < 500),
+    layout,
+    {
+      responsive: true,
+      displaylogo: false,
+      displayModeBar: false,
+    },
+  );
 }
 function cards(target, values) {
   target.replaceChildren();
@@ -172,13 +176,15 @@ function cards(target, values) {
     target.append(card);
   });
 }
-async function dashboard(snapshot, root) {
+async function dashboard(snapshot) {
   const state = resolveFilters(snapshot, location.search);
   const controls = {
     geo: byId("obs-geography"),
     year: byId("obs-year"),
     marketGeo: byId("obs-market-geography"),
     metric: byId("obs-market-metric"),
+    travelScope: byId("obs-travel-scope"),
+    travelYear: byId("obs-travel-year"),
   };
   snapshot.geographies.forEach((g) => {
     const option = element("option", g.name);
@@ -190,6 +196,18 @@ async function dashboard(snapshot, root) {
     option.value = year;
     controls.year.append(option);
   });
+  function travelYears() {
+    const years = snapshot.travel_years[state.travelScope];
+    if (!years.includes(state.travelYear)) state.travelYear = years.at(-1);
+    controls.travelYear.replaceChildren();
+    years.forEach((year) => {
+      const option = element("option", String(year));
+      option.value = year;
+      controls.travelYear.append(option);
+    });
+    controls.travelYear.value = state.travelYear;
+  }
+  travelYears();
   Object.entries(controls).forEach(([key, node]) => {
     node.value = state[key];
   });
@@ -202,7 +220,7 @@ async function dashboard(snapshot, root) {
       node.disabled = true;
     });
     try {
-      const { geo, year, marketGeo, metric } = state;
+      const { geo, year, marketGeo, metric, travelScope, travelYear } = state;
       const demand = selectRows(data.demand, { geography_code: geo });
       const current = selectRows(demand, { year });
       byId("obs-population").textContent =
@@ -284,6 +302,41 @@ async function dashboard(snapshot, root) {
         selectRows(data.markets, { geography_id: marketGeo, year, metric }),
         "Published source markets",
       );
+      const travel = selectRows(data.travel, { scope_id: travelScope });
+      const observation = selectRows(travel, { year: travelYear })[0];
+      const scope = snapshot.travel_scopes[travelScope];
+      byId("obs-travel-population").textContent =
+        `${scope.name} · ${travelYear}. Source: Bank of Greece, retrieved ${snapshot.source_vintages["Bank of Greece"]}. History charts retain all available years; hatching marks their latest year. Each chart uses its own labelled scale.`;
+      const comparison = (prefix) =>
+        `YoY: ${observation[prefix + "_yoy_status"] === "observed" ? percentage(observation[prefix + "_yoy_percent"]) : label(observation[prefix + "_yoy_status"])} · ${observation[prefix + "_recovery_2019_status"] === "observed" ? number(observation[prefix + "_recovery_2019_index"], 1) + " (2019=100)" : label(observation[prefix + "_recovery_2019_status"])}`;
+      cards(byId("obs-travel-kpis"), [
+        [
+          scope.receipts_label,
+          observation.receipts_millions == null
+            ? "Not available"
+            : "€" + number(observation.receipts_millions, 1) + "m",
+          comparison("receipts"),
+        ],
+        [
+          scope.expenditure_label,
+          observation.expenditure_per_unit == null
+            ? "Not available"
+            : "€" + number(observation.expenditure_per_unit, 1),
+          comparison("expenditure"),
+        ],
+        [
+          scope.stay_label,
+          observation.average_stay_nights == null
+            ? "Not available"
+            : number(observation.average_stay_nights, 2) + " nights",
+          comparison("average_stay"),
+        ],
+      ]);
+      table(
+        byId("obs-travel-table"),
+        travel,
+        scope.name + " · annual inputs and calculations",
+      );
       const plots = [
         ["obs-arrivals", `total_arrivals-${geo}`],
         ["obs-nights", `total_nights-${geo}`],
@@ -295,6 +348,14 @@ async function dashboard(snapshot, root) {
         ["obs-beds", `hotel_bed_places-${geo}`],
         ["obs-hotels", `hotel_establishments-${geo}`],
         ["obs-market-chart", `markets-${marketGeo}-${year}-${metric}`],
+        ["obs-travel-receipts", `travel-receipts-${travelScope}`],
+        ["obs-travel-expenditure", `travel-expenditure-${travelScope}`],
+        ["obs-travel-stay", `travel-average_stay_nights-${travelScope}`],
+        ["obs-travel-volume", `travel-denominator_thousands-${travelScope}`],
+        [
+          "obs-travel-nights",
+          `travel-overnight_stays_thousands-${travelScope}`,
+        ],
       ];
       await Promise.all(
         plots.map(([id, key]) => plot(byId(id), snapshot.charts[key])),
@@ -305,6 +366,8 @@ async function dashboard(snapshot, root) {
         year,
         market: marketGeo,
         measure: metric,
+        travel: travelScope,
+        travelYear,
       });
       history.replaceState(null, "", url);
       byId("obs-status").textContent =
@@ -318,7 +381,10 @@ async function dashboard(snapshot, root) {
   }
   Object.entries(controls).forEach(([key, node]) =>
     node.addEventListener("change", () => {
-      state[key] = key === "year" ? Number(node.value) : node.value;
+      state[key] = ["year", "travelYear"].includes(key)
+        ? Number(node.value)
+        : node.value;
+      if (key === "travelScope") travelYears();
       render().catch(showError);
     }),
   );
@@ -341,22 +407,13 @@ async function dashboard(snapshot, root) {
     );
     byId("obs-sources").append(box);
   });
-  const base = root.dataset.snapshot.replace("snapshot.json", "");
-  Object.entries(data).forEach(([name, rows]) => {
-    const anchor = link(
-      `${label(name)} · ${rows.length} rows · CSV ↓`,
-      base + name + ".csv",
-    );
-    anchor.download = name + ".csv";
-    byId("obs-downloads").append(anchor);
-  });
   await render();
 }
 function showError(error) {
   const target = byId("obs-status");
   if (target) {
     target.textContent =
-      "The interactive view could not load. Please use the release downloads below. " +
+      "The interactive view could not load. Please follow the official-source links for the original data. " +
       error.message;
     target.className = "obs-error";
   }
@@ -371,7 +428,7 @@ async function boot() {
   const snapshot = await response.json();
   if (snapshot.schema_version !== 1 || !snapshot.datasets || !snapshot.charts)
     throw new Error("Unsupported snapshot format.");
-  if (root) await dashboard(snapshot, root);
+  if (root) await dashboard(snapshot);
   if (blog) {
     for (const figure of document.querySelectorAll("[data-chart]")) {
       const plotNode = figure.querySelector(".obs-plot");
