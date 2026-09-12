@@ -91,10 +91,14 @@ The public dashboard is at `/observatory/`; its companion article remains at
 `/blog/greek-tourism-observatory/`. Both use one reviewed, versioned data snapshot.
 “Live” means publicly accessible and interactive, not automatically refreshed.
 
-The initial public release contains cleared ELSTAT/Eurostat accommodation
-extracts. Bank of Greece-derived outputs, Fraport traffic and GISCO geometry
-are withheld pending publication clearance. Source terms and omissions are
-visible in the dashboard and downloadable release manifest.
+The public release displays ELSTAT/Eurostat accommodation and selected Bank of
+Greece national/regional travel observations with explicitly attributed original
+calculations. Fraport traffic and GISCO geometry remain withheld. Readers seeking
+datasets are directed to official providers: no CSV/ZIP assets, generated exports
+or download section is supplied. The browser still receives chart/table JSON;
+removing download controls is not an access restriction on displayed values.
+Source terms and exclusions are visible in the dashboard. The September 12
+display revision reuses the verified September 11 source vintage.
 
 Run `node --test tests/observatory.test.mjs` before the Jekyll build. No npm
 installation is required to run the site or these tests. Plotly.js is pinned

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Greek Tourism Observatory
-description: Explore official accommodation statistics for Central Macedonia and Greece, with source notes and downloadable data.
+description: Explore accommodation and Bank of Greece travel statistics for Central Macedonia and Greece, with clearly defined measures and official sources.
 permalink: /observatory/
 page_type: observatory
 observatory: true
@@ -12,46 +12,46 @@ animated_background: false
   id="main-content"
   class="obs-shell"
   data-observatory
-  data-snapshot="/assets/data/observatory/2026-09-11-v1/snapshot.json"
+  data-snapshot="/assets/data/observatory/2026-09-12-display/snapshot.json"
 >
   <header class="obs-hero">
     <p class="obs-eyebrow">GREEK TOURISM OBSERVATORY / PUBLIC EDITION</p>
     <h1>A clearer view of<br /><span>northern Greece.</span></h1>
     <p class="obs-deck">
       Explore the season behind the headline. Accommodation demand, source
-      markets and capacity—with the definitions and data to check the story
-      yourself.
+      markets, capacity and travel spending—with the definitions to check the
+      story yourself.
     </p>
     <div class="obs-actions">
       <a class="obs-button" href="/blog/greek-tourism-observatory/"
         >Read the analysis ↗</a
-      ><a class="obs-button secondary" href="#downloads">Download the data ↓</a>
+      ><a class="obs-button secondary" href="#sources">Official sources ↗</a>
     </div>
     <p class="obs-meta">
       Reviewed snapshot · 11 September 2026 · Shared period 2019–2024 · 2025
-      capacity shown separately
+      capacity and Bank of Greece travel shown separately · Updated 12 September
+      2026
     </p>
   </header>
   <nav class="obs-nav" aria-label="Observatory sections">
     <a href="#overview">Overview</a><a href="#demand">Demand</a
     ><a href="#destinations">Destinations</a
     ><a href="#seasonality">Seasonality</a><a href="#capacity">Capacity</a
-    ><a href="#markets">Markets</a><a href="#methodology">Methodology</a
-    ><a href="#downloads">Downloads</a>
+    ><a href="#markets">Markets</a><a href="#travel">Travel value</a>
+    <a href="#methodology">Methodology</a
+    ><a href="#sources">Official sources</a>
   </nav>
   <div class="obs-notice">
-    This public edition contains cleared ELSTAT and Eurostat accommodation data.
-    Travel-value, airport and boundary-map outputs are not redistributed here.
+    Accommodation statistics and Bank of Greece travel statistics measure
+    different populations. Travel value has its own scope and year controls
+    below.
     <a href="#methodology">See scope and official sources →</a>
   </div>
   <p id="obs-status" role="status">Loading the reviewed snapshot…</p>
   <noscript
     ><p>
-      Interactive charts require JavaScript.
-      <a href="/assets/data/observatory/2026-09-11-v1/data.zip"
-        >Download the complete public ZIP</a
-      >
-      or
+      Interactive charts require JavaScript. Please follow the
+      <a href="#sources">official source links</a> or
       <a href="/blog/greek-tourism-observatory/"
         >read the article and its static tables</a
       >.
@@ -173,52 +173,116 @@ animated_background: false
     </p>
     <div id="obs-market-table"></div>
   </section>
+  <section id="travel" class="obs-section">
+    <p class="obs-eyebrow">07 / TRAVEL VALUE</p>
+    <h2>Spending and time spent beyond the check-in</h2>
+    <p>
+      Bank of Greece annual travel statistics, 2019–2025. National inbound
+      travellers and Central Macedonia regional visits are separate
+      populations—not hotel arrivals. A traveller may visit several regions.
+      Regional figures exclude supplementary cruise data outside the Border
+      Survey; national totals include it. No subregional spending estimates are
+      invented.
+    </p>
+    <div class="obs-controls">
+      <label
+        >Travel scope<select id="obs-travel-scope">
+          <option value="EL52_REGIONAL">
+            Central Macedonia · regional visits
+          </option>
+          <option value="GR_NATIONAL">Greece · inbound travellers</option>
+        </select></label
+      >
+      <label>Travel year<select id="obs-travel-year"></select></label>
+      <p>
+        These controls affect this section only. Full-year 2025 travel is
+        available; it does not extend the shared accommodation period beyond
+        2024.
+      </p>
+    </div>
+    <p id="obs-travel-population"></p>
+    <div id="obs-travel-kpis" class="obs-kpis"></div>
+    <div id="obs-travel-receipts" class="obs-plot"></div>
+    <div class="obs-grid">
+      <div id="obs-travel-volume" class="obs-plot"></div>
+      <div id="obs-travel-nights" class="obs-plot"></div>
+      <div id="obs-travel-expenditure" class="obs-plot"></div>
+      <div id="obs-travel-stay" class="obs-plot"></div>
+    </div>
+    <p>
+      Expenditure = matching receipts ÷ travellers or visits; average stay =
+      matching nights ÷ the same denominator. Source receipts are EUR millions
+      and counts thousands, so expenditure converts the ratio to euros. YoY
+      compares with the previous calendar year; recovery divides by the 2019
+      value and multiplies by 100. These are our calculations. Receipts are
+      nominal, not adjusted for inflation, and do not measure profit, GDP or
+      residents' wellbeing.
+    </p>
+    <div id="obs-travel-table"></div>
+    <p class="obs-note">
+      Source:
+      <a
+        href="https://www.bankofgreece.gr/en/statistics/external-sector/balance-of-payments/travel-services"
+        >Bank of Greece, Travel Services</a
+      >. See the
+      <a
+        href="https://www.bankofgreece.gr/en/news-and-media/press-office/news-list/news?announcement=27a32287-1c58-44e7-b900-2c92c53ffe9c"
+        >final 2025 release and methodology notes</a
+      >. Calculations and original charts: Konstantinos Fotoglou. Independent
+      analysis, not a Bank of Greece publication or endorsement.
+    </p>
+  </section>
   <section id="methodology" class="obs-section">
-    <p class="obs-eyebrow">07 / TRUST & LIMITS</p>
+    <p class="obs-eyebrow">08 / TRUST & LIMITS</p>
     <h2>What this edition can—and cannot—tell you</h2>
     <ul id="obs-notes"></ul>
-    <h3>Travel value and airport accessibility</h3>
+    <h3>Airport accessibility and maps</h3>
     <p>
-      Receipts, expenditure per trip/visit, length of stay and airport passenger
-      charts remain in the local research product, but are withheld from this
-      public edition pending publication clearance. This is not evidence that
-      those measures are unimportant or unavailable at source.
+      Fraport airport charts and GISCO boundary maps remain outside this public
+      edition pending the relevant reuse review. Their official sources are
+      linked below; absence here does not mean the measures are unavailable at
+      source.
     </p>
     <p>
       Inbound travellers, regional visits, accommodation check-ins and airport
       passengers count different events. Never add them together. Receipts are
       nominal spending, not GDP, profit or measured causal impact.
     </p>
-    <div id="obs-sources"></div>
-  </section>
-  <section id="downloads" class="obs-section">
-    <p class="obs-eyebrow">08 / TAKE THE EVIDENCE WITH YOU</p>
-    <h2>Open the data, not just the chart</h2>
+    <h3 id="sources">Looking for the original data?</h3>
     <p>
-      Download the reviewed public extracts used here—not a copy of the full
-      private database. CSVs retain unrounded numeric values, units, populations
-      and status columns. Missing cells are not zero.
+      To download data, please visit the official providers below. They maintain
+      the source files, revisions, methodology and applicable reuse conditions.
+      This site offers charts and on-page tables, not dataset downloads or a
+      database copy.
     </p>
-    <div class="obs-actions">
-      <a
-        class="obs-button"
-        href="/assets/data/observatory/2026-09-11-v1/data.zip"
-        download
-        >All public data · ZIP ↓</a
-      ><a
-        class="obs-button secondary"
-        href="/assets/data/observatory/2026-09-11-v1/manifest.json"
-        >Release manifest & checksums</a
-      ><a
-        class="obs-button secondary"
-        href="/assets/data/observatory/2026-09-11-v1/README.md"
-        >Data dictionary</a
+    <p>
+      <a href="https://www.statistics.gr/en/statistics/-/publication/STO12/2025"
+        >ELSTAT accommodation</a
       >
-    </div>
-    <div id="obs-downloads" class="obs-download-grid"></div>
+      ·
+      <a href="https://ec.europa.eu/eurostat/web/tourism/information-data"
+        >Eurostat tourism</a
+      >
+      ·
+      <a
+        href="https://www.bankofgreece.gr/en/statistics/external-sector/balance-of-payments/travel-services"
+        >Bank of Greece Travel Services</a
+      >
+      ·
+      <a
+        href="https://www.fraport-greece.com/en/our-expertise/aviation/traffic-figures.html"
+        >Fraport traffic reports</a
+      >
+      ·
+      <a
+        href="https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics"
+        >GISCO boundaries</a
+      >
+    </p>
+    <div id="obs-sources"></div>
     <p class="obs-note">
       Online interactive snapshot, not an automatically updating database
-      connection. Release <code>2026-09-11-v1</code>.
+      connection. Release <code>2026-09-12-display</code>.
     </p>
   </section>
 </main>

@@ -232,17 +232,6 @@
 .obs-table td {
   font-family: "Fira Code", monospace;
 }
-.obs-download-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 0.6rem;
-}
-.obs-download-grid a {
-  padding: 1rem;
-  border: 1px solid #334155;
-  border-radius: 7px;
-  text-decoration: none;
-}
 .obs-source {
   padding: 1rem 0;
   border-bottom: 1px solid #334155;

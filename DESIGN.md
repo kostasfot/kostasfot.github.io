@@ -1,5 +1,29 @@
 # Public Observatory
 
+## September 12 revision — travel value, official-source access
+
+Add five Bank of Greece annual-history charts for national travellers and Central
+Macedonia regional visits, separate scope/year controls, denominator-labelled
+cards and source tables. Extend the existing article with six matching charts and
+findings from the same September 11 reviewed source vintage. Retain site colours,
+fonts, routes and unrelated content. No new rendering framework is introduced.
+Remove all CSV/ZIP assets, generated downloads and download sections; redirect
+dataset requests to official source pages. A small chart/table JSON snapshot is
+still required for public browser rendering, not a confidential data boundary.
+The display decision is not a claim of legal clearance or written consent.
+The historical September 11 export contract below is superseded by this revision.
+
+Validated release `2026-09-12-display` uses analytics commit
+`bd529c752de77c1c8c6d51271a51fcea6e88fa84` and 47 input-provenance records.
+Nine website tests verify numeric article tables, all seventeen chart references,
+scope/year filters, no CSV/ZIP/download controls, rendering checksums and immutable
+phone label adaptation. All fifteen dashboard charts rendered. Regional/national
+switching left accommodation scope unchanged; the 2019 baseline displayed no
+prior-year comparison. Desktop and 390px phone checks passed after retaining
+readable endpoint labels and full hover values on narrow Bank of Greece charts.
+Jekyll production build passed and no browser JavaScript errors were observed.
+Old served downloads were removed, not erased from Git history or external caches.
+
 Native Jekyll + plain browser JavaScript. The existing site layout, navigation,
 fonts and dark colour system own the presentation. Plotly.js 4.0.0 is vendored
 unchanged from the analytics project's locked Plotly 7.0.0 runtime; license
