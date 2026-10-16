@@ -1,5 +1,13 @@
 # Public Observatory
 
+## CV content update — October 16, 2026
+
+The homepage now marks the MSc in Business Analytics & Data Science as completed,
+with the owner-confirmed final grade of 8.83/10. The education period ends in 2026;
+no exact graduation date is asserted. Existing card styling and the thesis link
+are unchanged. `tests/cv.test.mjs` guards the completed status, grade and link
+against regression to the previous pending wording.
+
 ## September 12 revision — travel value, official-source access
 
 Add five Bank of Greece annual-history charts for national travellers and Central
